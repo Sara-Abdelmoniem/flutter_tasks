@@ -133,18 +133,55 @@ If a new value isn't provided, preserve the original value.
 
 ### 7. Managing All Study Items (Collections & Upcasting – Sessions 2 & 3)
 
-Create a:
+Before interacting with the user, your application should start with **three predefined study items**.
+
+Create the following objects:
+
+#### Initial Data
+
+**1. ConceptTopic**
+
+| Property | Value |
+|---|---|
+| Class | `ConceptTopic` |
+| Title | `Variables, Null Safety & Loops` |
+| Level | `SessionLevel.beginner` |
+| Exercises Count | `3` |
+| Completed Exercises | `2` |
+
+**2. ConceptTopic**
+
+| Property | Value |
+|---|---|
+| Class | `ConceptTopic` |
+| Title | `Functions, OOP & Mixins` |
+| Level | `SessionLevel.intermediate` |
+| Exercises Count | `4` |
+| Completed Exercises | `1` |
+
+**3. MiniLab**
+
+| Property | Value |
+|---|---|
+| Class | `MiniLab` |
+| Title | `Collections & Polymorphism Practice` |
+| Level | `SessionLevel.advanced` |
+| Steps Count | `4` |
+
+**Important:** After creating these objects, use `copyWith()` to create an updated copy of the first topic, changing its level from `beginner` to `intermediate`. Use the updated object in your study items list.
+
+Store all three objects in a:
 
 ```dart
 List<StudyItem>
 ```
 
-This list should contain different study item objects:
-
-- At least two `ConceptTopic` objects.
-- At least one `MiniLab` object.
-
 Remember that both subclasses should be stored as `StudyItem` objects (upcasting).
+
+Your list should contain the updated first topic, the second topic, and the mini lab.
+
+Any additional topic entered by the user should be added to this same list.
+
 
 ### 8. Calculating Study Time (Higher-Order Functions – Sessions 2 & 3)
 
